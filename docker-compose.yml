@@ -1,0 +1,7 @@
+services:
+  bondbeyond-web:
+    build: .
+    container_name: bondbeyond-web
+    ports:
+      - "3002:80"
+    restart: unless-stopped
