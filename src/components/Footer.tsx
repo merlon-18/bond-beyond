@@ -69,6 +69,7 @@ const Footer = () => {
                 <div className="flex flex-col md:flex-row justify-between items-center gap-6 text-[10px] font-bold uppercase tracking-wider text-muted-foreground/50">
                     <p>&copy; {new Date().getFullYear()} Bond & Beyond.</p>
                     <div className="flex gap-8">
+                        <Link to="/blog" className="hover:text-primary transition-colors">Blog</Link>
                         <a href="#" className="hover:text-primary transition-colors">Adatvédelem</a>
                         <a href="#" className="hover:text-primary transition-colors">Impresszum</a>
                         <a href="#" className="hover:text-primary transition-colors">Süti Kezelés</a>

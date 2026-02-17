@@ -1,11 +1,14 @@
 import { useState, useEffect } from 'react';
 import { Routes, Route, useLocation } from 'react-router-dom';
+import { HelmetProvider } from 'react-helmet-async';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Home from './pages/Home';
 import QuoteRequest from './pages/QuoteRequest';
 import ServiceDetail from './pages/ServiceDetail';
 import LocationsPage from './pages/LocationsPage';
+import Blog from './pages/Blog';
+import BlogPost from './pages/BlogPost';
 
 const App = () => {
     const [loading, setLoading] = useState(true);
@@ -38,18 +41,22 @@ const App = () => {
     }
 
     return (
-        <div className="flex flex-col min-h-screen bg-background">
-            <Navbar />
-            <main className="flex-grow">
-                <Routes>
-                    <Route path="/" element={<Home />} />
-                    <Route path="/ajanlatkeres" element={<QuoteRequest />} />
-                    <Route path="/szolgaltatasok/:slug" element={<ServiceDetail />} />
-                    <Route path="/helyszinek" element={<LocationsPage />} />
-                </Routes>
-            </main>
-            <Footer />
-        </div>
+        <HelmetProvider>
+            <div className="flex flex-col min-h-screen bg-background">
+                <Navbar />
+                <main className="flex-grow">
+                    <Routes>
+                        <Route path="/" element={<Home />} />
+                        <Route path="/ajanlatkeres" element={<QuoteRequest />} />
+                        <Route path="/szolgaltatasok/:slug" element={<ServiceDetail />} />
+                        <Route path="/helyszinek" element={<LocationsPage />} />
+                        <Route path="/blog" element={<Blog />} />
+                        <Route path="/blog/:slug" element={<BlogPost />} />
+                    </Routes>
+                </main>
+                <Footer />
+            </div>
+        </HelmetProvider>
     );
 };
 

@@ -39,6 +39,7 @@ const Navbar = () => {
         { name: 'Rólunk', href: '#about' },
         { name: 'Helyszínek', href: '/helyszinek' },
         { name: 'Referenciák', href: '#portfolio' },
+        { name: 'Blog', href: '/blog' },
     ];
 
     return (
